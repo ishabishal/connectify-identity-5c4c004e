@@ -9,7 +9,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
-  const isLoggedIn = false; // This would come from auth context in a real app
+  const isLoggedIn = true; // Changed to true for demo purposes
   
   useEffect(() => {
     const handleScroll = () => {
@@ -62,17 +62,20 @@ const Navbar = () => {
               <Link to="/community" className="px-3 py-2 rounded-md hover:bg-secondary transition-elegant">
                 Community
               </Link>
+              <Link to="/safety" className="px-3 py-2 rounded-md hover:bg-secondary transition-elegant">
+                Safety
+              </Link>
               
               <div className="flex items-center ml-4 space-x-2">
                 <button className="p-2 rounded-full hover:bg-secondary transition-elegant relative">
                   <Heart size={20} />
                 </button>
-                <button className="p-2 rounded-full hover:bg-secondary transition-elegant relative">
+                <Link to="/messages" className="p-2 rounded-full hover:bg-secondary transition-elegant relative">
                   <MessageSquare size={20} />
                   <span className="absolute top-0 right-0 h-4 w-4 bg-brand-500 text-white text-xs rounded-full flex items-center justify-center">
                     2
                   </span>
-                </button>
+                </Link>
                 <button className="p-2 rounded-full hover:bg-secondary transition-elegant">
                   <Bell size={20} />
                 </button>
@@ -132,6 +135,9 @@ const Navbar = () => {
                 </Link>
                 <Link to="/community" className="block px-3 py-2 rounded-md hover:bg-secondary transition-elegant">
                   Community
+                </Link>
+                <Link to="/safety" className="block px-3 py-2 rounded-md hover:bg-secondary transition-elegant">
+                  Safety
                 </Link>
                 <Link to="/profile" className="block px-3 py-2 rounded-md hover:bg-secondary transition-elegant">
                   Profile
